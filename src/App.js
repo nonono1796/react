@@ -1,15 +1,23 @@
-import { useState } from "react";
+import { useState , useRef } from "react";
 import TodoList from "./TodoList.js";
 
 function App() {
   const [todos, setTodos] = useState([
     { id:1, name:"Todo1", completed:false }
   ]);
+
+const todoNameRef = useRef();
+
+const handleAddTodo=() => {
+  // タスクを追加する
+  console.log(todoNameRef.current.value);
+};
+
   return (
     <div>
     <TodoList todos={todos}/>
-    <input type="text"/>
-    <button>タスクを追加</button>
+    <input type="text" ref={todoNameRef}/>
+    <button onClick={handleAddTodo}>タスクを追加</button>
     <button>完了したタスクの削除</button>
     <div>残りのタスク：０</div>
     </div>
