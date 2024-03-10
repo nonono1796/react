@@ -10,8 +10,14 @@ const todoNameRef = useRef();
 
 const handleAddTodo=() => {
   // タスクを追加する
-  console.log(todoNameRef.current.value);
+  const name = todoNameRef.current.value;
+  setTodos((prevTodos) => {
+    return [...prevTodos, {id: "1", name : name , completed : false }]
+  });
+  todoNameRef.current.value = null;
 };
+
+
 
   return (
     <div>
