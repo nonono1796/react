@@ -12,7 +12,7 @@ const handleAddTodo=() => {
   // タスクを追加する
   const name = todoNameRef.current.value;
   setTodos((prevTodos) => {
-    return [...prevTodos, {id: "ここに何を入れる", name : name , completed: false }]
+    return [...prevTodos, {id: "uuidv4()", name : name , completed: false }]
   });
   todoNameRef.current.value = null;
 };
